@@ -1,0 +1,377 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0D1A3C;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh; 
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 950px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 35px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 18px;
+    padding: 30px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); 
+    color: #333; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    text-align: center;
+    min-height: 160px; 
+}
+
+.card-header {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 20px;
+}
+
+.card-header i {
+    font-size: 2em; 
+    margin-right: 12px; 
+    color: #007bff;
+}
+
+.card-header h2 {
+    font-size: 1.4em; 
+    margin: 0; 
+    color: #222; 
+    font-weight: 600; 
+}
+
+.control-card {
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+}
+
+.toggle-switch {
+    position: relative; 
+    display: inline-block; 
+    width: 100px; 
+    height: 45px; 
+    margin-top: 15px; 
+}
+
+.slider {
+    position: absolute; 
+    cursor: pointer; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; 
+    -webkit-transition: .4s; 
+    transition: .4s;
+    border-radius: 45px; 
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 38px; 
+    width: 38px;
+    left: 4px; 
+    bottom: 3.5px;
+    background-color: white; 
+    transition: .3s;
+    border-radius: 50%; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25); 
+}
+
+input:checked + .slider {
+    background-color: #007bff; 
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(55px);
+    -ms-transform: translateX(55px);
+    transform: translateX(55px);
+}
+
+.toggle-switch input:disabled + .slider {
+    background-color: #e0e0e0; 
+    cursor: not-allowed; 
+}
+
+.toggle-switch input:disabled + .slider:before {
+    background-color: #f0f0f0; 
+    box-shadow: none; 
+}
+
+/* SCREEN TIME CARD */
+.screen-time-card {
+    background-color: #343a40;
+    color: #fff; 
+    justify-content: space-around;
+}
+
+.screen-time-card h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.screen-time-input {
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 25px;
+}
+
+.screen-time-input select {
+    width: 100px; 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 1.2em; 
+    text-align: center; 
+    margin-right: 12px; 
+    background-color: #495057; 
+    color: #fff; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2C178.1L153.2%2C266.8c-5.3%2C3.6-12.7%2C3.6-18%2C0L5.4%2C178.1c-9.2-6.3-2.6-20.6%2C8.7-20.6h272.9C289.5%2C157.6%2C296.2%2C171.9%2C287%2C178.1z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center; 
+    background-size: 14px; 
+    cursor: pointer; 
+}
+
+.screen-time-input .unit {
+    font-size: 1.2em; 
+}
+
+.screen-time-buttons {
+    display: flex; 
+    gap: 20px; 
+    justify-content: center; 
+}
+
+/* BUTTON STYLES  */
+.btn {
+    padding: 12px 25px; 
+    border: none; 
+    border-radius: 10px; 
+    font-size: 1.1em; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.1s ease; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn.primary {
+    background-color: #007bff; 
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); 
+}
+
+.btn.primary:hover {
+    background-color: #0056b3; 
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+}
+
+.btn.secondary {
+    background-color: #6c757d;
+    color: white;
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+.btn.secondary:hover {
+    background-color: #5a6268; 
+    box-shadow: 0 6px 12px rgba(108, 117, 125, 0.4);
+}
+
+.timer-card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timer-display {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.5em; 
+    font-weight: bold;
+    color: #007bff; 
+    margin-bottom: 15px;
+    letter-spacing: 2px; 
+    text-shadow: 0 2px 5px rgba(0, 123, 255, 0.2); 
+}
+
+.timer-card p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 0;
+}
+
+.distance-display-card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.distance-value {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+.distance-message {
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.warning-card {
+    background-color: #dc3545; 
+    color: #fff; 
+    font-weight: bold;
+    font-size: 1.6em; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4); 
+}
+
+.warning-card i {
+    font-size: 3em; 
+    margin-bottom: 15px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.hidden {
+    display: none !important; /* Menyembunyikan elemen secara paksa */
+}
+
+@media (max-width: 992px) {
+    /* Untuk tablet dan layar laptop kecil */
+    .dashboard-container {
+        max-width: 760px; /* Sedikit lebih kecil */
+    }
+    .card-grid {
+        gap: 25px; /* Jarak antar kartu sedikit berkurang */
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .timer-display, .distance-value {
+        font-size: 2.2em; /* Sesuaikan ukuran ini di breakpoint ini juga */
+    }
+    .card-header h2 {
+        font-size: 1.3em;
+    }
+    .card-header i {
+        font-size: 1.8em;
+    }
+    .warning-card {
+        font-size: 1.4em;
+    }
+    .warning-card i {
+        font-size: 2.5em;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Untuk tablet vertikal dan ponsel besar */
+    .dashboard-container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 25px;
+    }
+
+    /* KEMBALI KE SATU KOLOM DI LAYAR KECIL */
+    .card-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk perangkat mobile */
+        gap: 20px;
+    }
+    .card {
+        min-height: unset; /* Hapus tinggi minimum agar konten menentukan tinggi */
+        padding: 20px;
+    }
+    .card-header h2 {
+        font-size: 1.2em;
+    }
+    .card-header i {
+        font-size: 1.5em;
+    }
+    .toggle-switch {
+        width: 80px;
+        height: 38px;
+    }
+    .slider:before {
+        height: 30px;
+        width: 30px;
+        left: 4px;
+        bottom: 4px;
+    }
+    input:checked + .slider:before {
+        -webkit-transform: translateX(42px);
+        -ms-transform: translateX(42px);
+        transform: translateX(42px);
+    }
+    .screen-time-input select {
+        width: 80px;
+        font-size: 1em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .timer-display, .distance-value {
+        font-size: 2em; /* Sesuaikan ukuran ini di breakpoint ini juga */
+    }
+    .warning-card {
+        font-size: 1.2em;
+    }
+    .warning-card i {
+        font-size: 2em;
+    }
+}
